@@ -5,7 +5,7 @@ import { StoreCard } from '../store-card/store-card';
 
 export const StoreProducts = () => {
     let [isOpen, setIsOpen] = React.useState(false);
-    const {products} = useSelector((state) => state.productReducer);
+    const {products, totalPrice} = useSelector((state) => state.productReducer);
 
   return (
     <>
@@ -16,6 +16,7 @@ export const StoreProducts = () => {
         Open Cart
       </button>
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+        <h1 className='text-3xl my-3'>$ {totalPrice}</h1>
         {products.map((item) =>(
             <StoreCard key={item.id} {...item}/>
         ))}

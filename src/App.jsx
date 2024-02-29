@@ -12,7 +12,7 @@ function App() {
       <StoreProducts/>
       <div className="grid grid-cols-4 gap-5">
         {productss.map((product) => (
-          <Card key={product.id} {...product} />
+          <Card key={product.id} image={product.image} title={product.title} id={product.id} price={product.price} count={product.count}/>
         ))}
       </div>
      
